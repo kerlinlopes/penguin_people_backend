@@ -51,7 +51,6 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 
-
 /////////////////////////////////
 //Routes
 /////////////////////////////////
@@ -74,7 +73,7 @@ app.get("/people", async (req, res) => {
 // post request to /people, uses request body to make new people
 app.post("/people", async (req, res) => {
   try {
-    // screate a new person
+    // create a new person
     res.json(await People.create(req.body));
   } catch (error) {
     res.status(400).json({ error });
